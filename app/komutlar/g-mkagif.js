@@ -1,0 +1,34 @@
+const Discord = require("discord.js");
+const db = require("quick.db");
+const ms = require("ms")
+
+exports.run = (client, message) => {
+  let mangif = [
+    "",
+
+  ];
+
+  let random = Math.floor(Math.random() * mangif.length);
+
+  let gifembed = new Discord.RichEmbed()
+    .setAuthor(`Shrike`, `https://cdn.discordapp.com/attachments/760483584188088341/780620359023460362/25585ed942ff8e371a79a8fa74a62b70.webp`)
+    .setTitle(`Mustafa Kemal Atatürk Gif`)
+    .setColor("#5556ad")
+    .setFooter(`© Shrike Bot 2020`, message.author.avatarURL)
+    .setImage(`https://cdn.discordapp.com/attachments/782078893217546240/782084870960578590/Shrike_Cok_Yaknda.jpg`)
+    .setTimestamp();
+  message.channel.send(gifembed);
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["mkagif","mustafa-kemal-atatürk-gif","mustafakemalatatürkgif"],
+  permLevel: 0
+};
+
+exports.help = {
+  name: "mka-gif",
+  description: "Rastgele gif atar.",
+  usage: "gif"
+};//codeworld
